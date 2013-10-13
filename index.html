@@ -28,7 +28,6 @@
   <body>
 
     <div class="reveal">
-
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
@@ -52,7 +51,7 @@
               <strong>Maniphest</strong> &mdash; Task Integration
             </li>
             <li>
-              <strong>Herald</strong> &mdash; Auditing
+              Sample workflow
             </li>
           </ul>
         </section>
@@ -73,18 +72,53 @@
 
         <section data-markdown>
           <script type="text/template">
-                  ## Markdown support
+            ## Coming from GitHub
 
-                  For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+            **GitHub**: Pull requests (commits and branches)
 
-                  ```
-                  <section data-markdown>
-                    ## Markdown support
+            **Phabricator**: Revisions (everything is a diff)
+          </script>
+        </section>
 
-                    For those of you who like that sort of thing.
-                    Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-                  </section>
-                  ```
+        <section data-markdown>
+          <script type="text/template">
+            ## Why does that matter?
+
+            * For basic usage, it doesn't.
+
+            * Instead of pushing a branch and opening a pull request, you simply
+              run `arc diff`.
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Sample
+
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## arc which
+
+            Shows you which commits `arc diff` will select, and which revision is
+            in the working copy.
+
+            ![arc which sample](img/arc-which-sample.png)
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Turn down the noise
+
+            By default, you get an email from Phabricator for every action
+            you're a part of, *including actions you trigger*.
+
+            To turn this off, go to [your email preferences page](https://code.uber.com/settings/panel/emailpreferences/)
+
+            ![email preferences](img/email-prefs.png)
           </script>
         </section>
 
