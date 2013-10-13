@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+
+      <title>Arc Diff for Ubers</title>
+
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+      <link rel="stylesheet" href="css/reveal.min.css">
+      <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+      <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="lib/css/zenburn.css">
+
+      <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+      <script>
+        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+      </script>
+
+      <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+      <![endif]-->
+  </head>
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Phabricator for Ubers</h1>
+          <p>
+            <small>Created by
+              <a href="http://github.com/sectioneight">Aiden Scandella</a></small>
+          </p>
+        </section>
+
+        <section>
+          <h2>What I'll Cover</h2>
+          <ul>
+            <li>
+              <strong>Arcanist</strong> a.k.a. `arc` &mdash; CLI
+            </li>
+            <li>
+              <strong>Diffusion</strong> &mdash; Code Review
+            </li>
+            <li>
+              <strong>Maniphest</strong> &mdash; Task Integration
+            </li>
+            <li>
+              <strong>Herald</strong> &mdash; Auditing
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What I Won't Cover</h2>
+          <ul>
+            <li>Git Basics</li>
+            <li>Setting up arc <small>(see:
+              <a href="https://code.uber.com/w/settinguparc/#using-arc">
+                new developer quickstart</a>)</small>
+            </li>
+            <li>Phabricator's <a href="http://www.phabricator.com/docs/phabricator/article/Remarkup_Reference.html#memes">
+              meme syntax</a></li>
+            <li>Any of the other apps</li>
+          </ul>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+                  ## Markdown support
+
+                  For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+
+                  ```
+                  <section data-markdown>
+                    ## Markdown support
+
+                    For those of you who like that sort of thing.
+                    Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+                  </section>
+                  ```
+          </script>
+        </section>
+
+        <section>
+          <h2>Pretty Code</h2>
+          <pre><code data-trim contenteditable>
+$ git checkout -b my-topic-branch
+$ git commit -m "Add features"
+          </code></pre>
+        </section>
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          // Remote control your reveal.js presentation using a touch device
+          { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
