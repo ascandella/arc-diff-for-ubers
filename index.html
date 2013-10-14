@@ -124,7 +124,7 @@
           <script type="text/template">
             ## To update an existing revision
 
-            * If
+            * If you lose your commit message link and your tree changes
             * Use the `--update revision_id`
 
             ```bash
@@ -167,6 +167,19 @@
 
         <section data-markdown>
           <script type="text/template">
+            ## What's changed for reviewers?
+
+            * Side-by-side diffs
+            * Diff between versions of a revision (my FAVORITE)
+            * More explicit actions
+              * Comment
+              * Request Changes ✘
+              * Accept Revision ✔
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
             ## Turn down the noise
 
             By default, you get an email from Phabricator for every action
@@ -178,12 +191,19 @@
           </script>
         </section>
 
-        <section>
-          <h2>Pretty Code</h2>
-          <pre><code data-trim contenteditable>
-$ git checkout -b my-topic-branch
-$ git commit -m "Add features"
-          </code></pre>
+        <section data-markdown>
+          <script type="text/template">
+            ## But I liked getting all that email...
+
+            With GitHub, you get an email for every PR and every individual
+            comment *on every repository*.
+
+            With Phabricator, it's much more targeted: only reviewers and CCs
+            are notified of new diffs and comments.
+
+            If you want to opt-in, you can set up a [herald
+            rule](https://code.uber.com/herald/).
+          </script>
         </section>
       </div>
 
