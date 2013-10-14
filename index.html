@@ -84,10 +84,10 @@
           <script type="text/template">
             ## Why does that matter?
 
-            * For basic usage, it doesn't.
+            * For basic usage, it doesn't
 
             * Instead of pushing a branch and opening a pull request, you simply
-              run `arc diff`.
+              run `arc diff`
           </script>
         </section>
 
@@ -100,12 +100,68 @@
 
         <section data-markdown>
           <script type="text/template">
+            ## When You Get Lost
+
+            * When a rebase leaves you in a strange state
+            * When you're working on multiple feature branches
+            * Use `arc which` to get a sense of your surroundings
+
+            ```bash
+            $ arc which
+            ```
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
             ## arc which
 
-            Shows you which commits `arc diff` will select, and which revision is
-            in the working copy.
-
             ![arc which sample](img/arc-which-sample.png)
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## To update an existing revision
+
+            * If
+            * Use the `--update revision_id`
+
+            ```bash
+            $ arc diff --update D123
+            ```
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Changing what's in the diff
+
+            * By default, looks at all local changes between `origin/master` and
+              `HEAD`
+            * To override, specify a base reference (branch name, SHA, symbolic
+              ref):
+
+            ```bash
+            $ arc diff base-ref
+            ```
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Complex scenario
+
+            I'm working off a co-worker's topic branch '`feature-a`', I can send
+            just my changes up for review:
+
+            ```bash
+            git fetch && git checkout feature-a
+            git checkout -b feature-b
+            vim
+            git commit
+            arc diff feature-a
+            ```
           </script>
         </section>
 
