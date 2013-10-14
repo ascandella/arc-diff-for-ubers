@@ -156,13 +156,20 @@
           <script type="text/template">
             ## Changing what's in the diff
 
-            * By default, looks at all local changes between `origin/master` and
-              `HEAD`
+            * By default, looks at all local changes between `git merge-base
+              origin/master` and `HEAD`
             * To override, specify a base reference (branch name, SHA, symbolic
               ref):
 
             ```bash
             $ arc diff base-ref
+            ```
+
+            * To set a global default, [run
+              this](https://code.uber.com/w/settinguparc/#configuring-your-base):
+
+            ```bash
+            $ arc set-config base "git:merge-base(origin/master), arc:prompt"
             ```
           </script>
         </section>
