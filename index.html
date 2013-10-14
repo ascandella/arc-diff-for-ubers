@@ -12,6 +12,7 @@
 
       <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
       <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+      <link rel="stylesheet" href="css/aiden.css">
 
       <!-- For syntax highlighting -->
       <link rel="stylesheet" href="css/tomorrow-night-bright.css">
@@ -60,9 +61,10 @@
           <h2>What I Won't Cover</h2>
           <ul>
             <li>Git Basics</li>
-            <li>Setting up arc <small>(see:
+            <li>Setting up arc
+              (see:
               <a href="https://code.uber.com/w/settinguparc/#using-arc">
-                new developer quickstart</a>)</small>
+                new developer quickstart</a>)
             </li>
             <li>Phabricator's <a href="http://www.phabricator.com/docs/phabricator/article/Remarkup_Reference.html#memes">
               meme syntax</a></li>
@@ -142,7 +144,7 @@
             ## To update an existing revision
 
             * If you lose your commit message link and your tree changes
-            * Use the `--update revision_id`
+            * Use the `--update revision-id`
 
             ```bash
             $ arc diff --update D123
@@ -179,6 +181,19 @@
             $ git commit
             $ arc diff feature-a
             ```
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## To review
+
+            * Creates or updates a diff between `HEAD` and `git merge-base
+              origin/master` (by default)
+            * If it recognizes an existing revision, updates
+            * Otherwise it creates a new one
+            * Behavior can be overriden by using `--update D123` or specifying a
+              `base-ref`
           </script>
         </section>
 
