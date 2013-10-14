@@ -157,7 +157,7 @@ $ git commit -m "Add features"
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
           { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
           // Remote control your reveal.js presentation using a touch device
-          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!Reveal.getQueryHash().remote; } }
         ]
       });
 
