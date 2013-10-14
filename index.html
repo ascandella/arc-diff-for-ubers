@@ -14,7 +14,7 @@
       <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
 
       <!-- For syntax highlighting -->
-      <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+      <link rel="stylesheet" href="css/tomorrow-night-bright.css">
 
       <!-- If the query includes 'print-pdf', use the PDF print sheet -->
       <script>
@@ -93,8 +93,25 @@
 
         <section data-markdown>
           <script type="text/template">
-            ## Sample
+            ## Hello, arc
 
+            ```bash
+            $ git checkout -b add-toaster-oven
+            $ vim
+            $ git commit
+            $ arc diff
+            ```
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Addressing review feedback
+
+            * Make your changes
+            * Create a new commit on top of your previously reviewed change
+            * Run `arc diff` again
+            * Note the lack of force-pushing
           </script>
         </section>
 
@@ -156,11 +173,11 @@
             just my changes up for review:
 
             ```bash
-            git fetch && git checkout feature-a
-            git checkout -b feature-b
-            vim
-            git commit
-            arc diff feature-a
+            $ git fetch && git checkout feature-a
+            $ git checkout -b feature-b
+            $ vim
+            $ git commit
+            $ arc diff feature-a
             ```
           </script>
         </section>
