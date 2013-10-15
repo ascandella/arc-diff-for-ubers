@@ -139,7 +139,7 @@
 
         <section data-markdown>
           <script type="text/template">
-            ## To update an existing revision
+            ## Updating an existing revision
 
             * If you lose your commit message link and your tree changes
             * Use the `--update revision-id`
@@ -150,33 +150,42 @@
           </script>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-            ## Changing what's in the diff
+        <section>
+          <h2>Changing what's in the diff</h2>
 
-            * By default, looks at all local changes between your upstream
-              branch (e.g. `origin/master`) and `HEAD`
-              * Roughly equivalent to:
+          <ul>
+            <li class="fragment">
+              By default, looks at all local changes between your upstream
+              branch (e.g. <code>origin/master</code>) and <code>HEAD</code>
+              <ul>
+                <li class="fragment">Roughly equivalent to:
 
-              ```bash
-              $ git diff $(git merge-base origin/master HEAD)..HEAD
-              ```
-
-              * This confuses some people
-            * To override, specify a base reference (branch name, SHA, symbolic
+                  <pre><code data-trim>
+                    $ git diff $(git merge-base origin/master HEAD)..HEAD
+                  </code></pre>
+                </li>
+                <li class="fragment">
+                  This confuses some people
+                </li>
+              </ul>
+            <li class="fragment">
+              To override, specify a base reference (branch name, SHA, symbolic
               ref):
 
-            ```bash
-            $ arc diff base-ref
-            ```
-
-            * To set a global default, overriding upstream behavior, [run
-              this](https://code.uber.com/w/settinguparc/#configuring-your-base):
-
-            ```bash
-            $ arc set-config base "git:merge-base(origin/master), arc:prompt"
-            ```
-          </script>
+              <pre><code data-trim>
+                $ arc diff &lt;base-ref&gt;
+              </code></pre>
+            </li>
+            <li class="fragment">
+              To set a global default, overriding upstream behavior,
+              <a href="https://code.uber.com/w/settinguparc/#configuring-your-base">
+                run this
+              </a>:
+              <pre><code data-trim>
+                $ arc set-config base "git:merge-base(origin/master), arc:prompt"
+              </code></pre>
+            </li>
+          </ul>
         </section>
 
         <section data-markdown>
