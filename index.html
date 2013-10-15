@@ -233,7 +233,12 @@
           <script type="text/template">
             ## Maniphest Tasks
 
-            *Placeholder*
+            * Like all objects in Phabricator, you can reference T<manihest ID>
+              to create a bi-directional link
+            * Use special 'Fixes TXXX' to automatically mark a task resolved
+              when the revision is landed
+
+            ![sample task integration](img/sample-task-integration.png)
           </script>
         </section>
 
@@ -282,6 +287,21 @@
             ## Herald in action
 
             ![sample herald rule](img/herald-rule.png)
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Where can I test this out?
+
+            * Make sure you have your [ssh
+              forwarding](https://code.uber.com/w/sshforwarding/) set up
+
+            ```bash
+            $ git clone gitolite@code01-peak1:testing
+            $ cd testing
+            $ # arc diff to your heart's content
+            ```
           </script>
         </section>
 
