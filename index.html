@@ -106,15 +106,22 @@
           </script>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-            ## Addressing review feedback
-
-            * Make your changes
-            * Create a new commit on top of your previously reviewed change
-            * Run `arc diff` again
-            * Note the lack of force-pushing
-          </script>
+        <section>
+          <h2>Addressing review feedback</h2>
+          <ul>
+            <li class="fragment">
+              Make your changes
+            </li>
+            <li class="fragment">
+              Create a new commit on top of your previously reviewed change
+            </li>
+            <li class="fragment">
+            Run <code>arc diff</code> again
+            </li>
+            <li class="fragment">
+              Note the lack of force-pushing
+            </li>
+          </ul>
         </section>
 
         <section data-markdown>
@@ -156,8 +163,15 @@
           <script type="text/template">
             ## Changing what's in the diff
 
-            * By default, looks at all local changes between `git merge-base
-              origin/master` and `HEAD`
+            * By default, looks at all local changes between your upstream
+              branch (e.g. `origin/master`) and `HEAD`
+              * Roughly equivalent to:
+
+              ```bash
+              $ git diff $(git merge-base origin/master HEAD)..HEAD
+              ```
+
+              * This confuses some people
             * To override, specify a base reference (branch name, SHA, symbolic
               ref):
 
@@ -165,7 +179,7 @@
             $ arc diff base-ref
             ```
 
-            * To set a global default, [run
+            * To set a global default, overriding upstream behavior, [run
               this](https://code.uber.com/w/settinguparc/#configuring-your-base):
 
             ```bash
@@ -196,7 +210,9 @@
             ## In review
 
             * Creates or updates a diff between `HEAD` and `git merge-base
-              origin/master` (by default)
+              origin/master`
+              * If you're going to be pushing your branches pre- code-review,
+                I *highly* recommend overriding your default `base`
             * If it recognizes an existing revision, updates
             * Otherwise it creates a new one
             * Behavior can be overriden by using `--update D123` or specifying a
