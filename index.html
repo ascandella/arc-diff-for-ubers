@@ -178,7 +178,7 @@
           <script type="text/template">
             ## Complex scenario
 
-            I'm working off a co-worker's topic branch '`feature-a`', I can send
+            I'm working off a co-worker's topic branch `feature-a`, I can send
             just my changes up for review:
 
             ```bash
@@ -193,7 +193,7 @@
 
         <section data-markdown>
           <script type="text/template">
-            ## To review
+            ## In review
 
             * Creates or updates a diff between `HEAD` and `git merge-base
               origin/master` (by default)
@@ -233,7 +233,8 @@
           <script type="text/template">
             ## Maniphest Tasks
 
-            * Like all objects in Phabricator, you can reference T<manihest ID>
+            * Like all objects in Phabricator, you can reference `T<maniphest
+              ID>`
               to create a bi-directional link
             * Use special 'Fixes TXXX' to automatically mark a task resolved
               when the revision is landed
@@ -305,8 +306,23 @@
           </script>
         </section>
 
-      </div>
+        <section>
+          <h2>Questions?</h2>
 
+
+          <h3 class="fragment">Cool. And now, a demo</h3>
+
+          <div class="fragment">
+            To view these slides online, go to
+            <p>
+              <a href="http://sectioneight.github.io/arc-diff-for-ubers/">
+                sectioneight.github.io/arc-diff-for-ubers/
+              </a>
+            </p>
+          </div>
+        </section>
+
+      </div>
     </div>
 
     <script src="reveal.js/lib/js/head.min.js"></script>
