@@ -242,9 +242,6 @@
           <h2>What's changed for reviewers?</h2>
           <ul>
             <li class="fragment">
-              Side-by-side diffs
-            </li>
-            <li class="fragment">
               Diff between versions of a revision (my FAVORITE)
               <ul>
                 <li>
@@ -366,7 +363,7 @@
       // Full list of configuration options available here:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        controls: false,
+        controls: !~window.location.search.indexOf('nav'),
         progress: true,
         history: true,
         center: true,
